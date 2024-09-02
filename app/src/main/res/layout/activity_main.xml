@@ -17,18 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_margin="32dp">
+        android:layout_marginTop="32dp">
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_back_arrow"
-            app:layout_constraintStart_margin="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_margin="16dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_back_arrow" />
 
         <TextView
             android:id="@+id/song_title"
@@ -38,8 +35,6 @@
             android:textColor="@color/yellow"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center"
             android:layout_marginTop="16dp"
             tools:ignore="MissingConstraints" />
@@ -55,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/judul"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_margin="32dp" />
+        android:layout_marginTop="32dp" />
 
     <!-- SeekBar untuk Progres Lagu -->
     <SeekBar
@@ -67,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/album_art"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_margin="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp" />
 
@@ -83,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/seek_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_margin="16dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"/>
 
     <!-- Sub Judul Lagu -->
@@ -97,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/artist_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_margin="8dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"/>
 
     <!-- Tombol Kontrol -->
@@ -106,11 +101,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@+id/song_subtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_margin="32dp">
+        android:layout_marginTop="32dp">
 
         <!-- Tombol Sebelumnya -->
         <ImageButton
