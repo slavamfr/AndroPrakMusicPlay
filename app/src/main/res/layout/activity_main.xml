@@ -1,70 +1,77 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
+    android:paddingHorizontal="40dp"
+    android:paddingVertical="24dp"
     tools:context=".MainActivity"
-    android:padding="16dp">
+    android:gravity="center">
 
+    <!-- LinearLayout Judul -->
     <LinearLayout
         android:id="@+id/judul"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="32dp">
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true">
+
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:importantForAccessibility="no"
-            android:src="@drawable/ic_back_arrow" />
+            android:src="@drawable/ic_back_arrow"
+            android:layout_gravity="center_vertical"/>
 
         <TextView
             android:id="@+id/song_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:paddingHorizontal="50dp"
             android:text="@string/song_title"
             android:textColor="@color/yellow"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginTop="16dp"
-            tools:ignore="MissingConstraints" />
+            android:layout_gravity="center_vertical"/>
+
+        <ImageButton
+            android:id="@+id/opt_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_titiktiga" />
     </LinearLayout>
 
     <!-- Gambar Album -->
     <ImageView
         android:id="@+id/album_art"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:src="@drawable/album_art"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/judul"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        android:background="@drawable/rounded_corners"
+        android:clipToOutline="true"
+        android:layout_below="@id/judul"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
 
     <!-- SeekBar untuk Progres Lagu -->
     <SeekBar
         android:id="@+id/seek_bar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:progressTint="@color/yellow"
-        android:backgroundTintMode="@color/yellow"
-        app:layout_constraintTop_toBottomOf="@+id/album_art"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
+        android:thumb="@drawable/thumb"
+        android:layout_below="@id/album_art"
+        android:layout_marginTop="50dp" />
 
     <!-- Nama Artis -->
     <TextView
@@ -73,13 +80,12 @@
         android:layout_height="wrap_content"
         android:text="@string/artist_name"
         android:textColor="@color/orange"
+        android:fontFamily="@font/poppins"
         android:textSize="18sp"
-        android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/seek_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:gravity="center"/>
+        android:layout_below="@id/seek_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center" />
 
     <!-- Sub Judul Lagu -->
     <TextView
@@ -89,11 +95,11 @@
         android:text="@string/song_title"
         android:textColor="@color/yellow"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/artist_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:gravity="center"/>
+        android:layout_below="@id/artist_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center" />
 
     <!-- Tombol Kontrol -->
     <LinearLayout
@@ -101,17 +107,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/song_subtitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp">
+        android:layout_below="@id/song_subtitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp">
 
         <!-- Tombol Sebelumnya -->
         <ImageButton
             android:id="@+id/previous_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_previous"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/skip1"
             android:background="@android:color/transparent" />
 
         <!-- Tombol Putar -->
@@ -119,7 +125,8 @@
             android:id="@+id/play_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_play"
+            android:src="@drawable/play"
+            android:layout_gravity="center_vertical"
             android:background="@android:color/transparent"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp" />
@@ -129,8 +136,9 @@
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_next"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/skip2"
             android:background="@android:color/transparent" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
